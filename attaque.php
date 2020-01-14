@@ -1,7 +1,5 @@
 <?php
-/**
- *
- pke1=*/
+
 
 class Attaque
 {
@@ -28,7 +26,7 @@ class Attaque
 }
  
 
-}
+
   public function degat (){ // fonction qui permet de calculer le nombre de degat subit par le pokemon attaqué
 
 

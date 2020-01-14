@@ -1,5 +1,7 @@
 <?php
+
 require_once('attaque.php');
+echo 'cc';
 require_once('mybattle.php');
 //recuperer les valeur des degats sur le fichier text
 $currentBattle = fopen('degatcombat.txt', 'r+');
@@ -25,8 +27,10 @@ if(isset($_POST['attackbutton'])){
       $suddenDamagepok2=$attackpok1->degat();
       //incrementer les dagats du pokemon adverse
       $combat->recevoirdegat2($suddenDamagepok2);
+  
       ?>
               <script type="text/javascript">
+            
                     var $imgpok1= document.getElementById('attack1');
                     $imgpok1.classList.remove('none');
                     setTimeout(function(){ $imgpok1.classList.add("none"); }, 500);

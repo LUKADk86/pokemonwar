@@ -105,12 +105,12 @@ if((isset($_POST['dresseur']))AND($_POST['dresseur']=="sacha")) {
       $reqpokopp->execute(array($id_pokopp));
 
       $poklineopp=$reqpokopp->fetch();
+      
   //gerer les attaques
       if(isset($poklineopp['id_pokemon'])){
     //requete recuperer les id des attaque de ce pokemon auto
             $reqattackopp = $bdd->prepare('SELECT fk_id_attaque FROM pokemonattaque WHERE fk_id_pokemon=?');
 
-            $reqattackopp->execute(array($poklineopp['id_pokemon']));
             //un tableau pour recuperer les nom des 4 attaques du pokemon auto
             $attacksopp=[];
             $intensiteOpp=[];
@@ -125,7 +125,9 @@ if((isset($_POST['dresseur']))AND($_POST['dresseur']=="sacha")) {
                   $intensiteOpp[]=$attaquenameopp['intensite'];
                 }
               }
+              
       $pokemonopponent= new Pokemon($poklineopp['id_pokemon'], $poklineopp['nom'], $poklineopp['defense'], $attacksopp, $poklineopp['niveau'], $poklineopp['point_vie'], $poklineopp['image_devant'], $poklineopp['image_derriere']);
+
 }
 
 
@@ -194,13 +196,13 @@ else if((isset($_POST['dresseur']))AND($_POST['dresseur']=="barbara")){
               }
       $pokemonopponent= new Pokemon($poklineopp['id_pokemon'], $poklineopp['nom'], $poklineopp['defense'], $attacksopp, $poklineopp['niveau'], $poklineopp['point_vie'], $poklineopp['image_devant'], $poklineopp['image_derriere']);
 }
-
-
-
-
-
-
+echo 'hh';
 require_once('arene.php');
+echo 'bb';
 require_once('combat_post.php');
+
+
+
+
 
  ?>
